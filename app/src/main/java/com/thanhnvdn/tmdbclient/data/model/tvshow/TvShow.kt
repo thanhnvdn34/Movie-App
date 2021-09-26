@@ -11,6 +11,8 @@ data class TvShow(
     @PrimaryKey
     @SerializedName("id")
     val id: Int,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("overview")
     val overview: String,
     @SerializedName("popularity")

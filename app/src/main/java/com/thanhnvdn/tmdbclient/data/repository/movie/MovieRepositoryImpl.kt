@@ -40,11 +40,12 @@ class MovieRepositoryImpl(
         return movieList
     }
 
+
     private suspend fun getMoviesFromDB(): List<Movie> {
         lateinit var movieList: List<Movie>
 
         try {
-            val movieList = movieLocalDatasource.getMoviesFromDB()
+            movieList = movieLocalDatasource.getMoviesFromDB()
         }catch (ex: Exception) {
             Log.i("TAG", ex.message.toString())
         }
@@ -62,7 +63,7 @@ class MovieRepositoryImpl(
         lateinit var movieList: List<Movie>
 
         try {
-            val movieList = movieCacheDataSource.getMoviesFromCache()
+            movieList = movieCacheDataSource.getMoviesFromCache()
         }catch (ex: Exception) {
             Log.i("TAG", ex.message.toString())
         }
